@@ -1,4 +1,5 @@
-##Supreme Bot
+Supreme Bot
+-----------
 
 Chrome Extension that will automatically purchase 'Supreme' brand clothing at the time of the drop, allowing you to get your clothing before it sells out.
 
