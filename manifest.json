@@ -1,0 +1,52 @@
+
+{
+  "manifest_version": 2,
+
+  "name": "SupremeBot",
+  "description": "Buying Supreme clothing is supposed to be hard. We make it easy!",
+  "version": "1.0",
+  "options_page": "supremeBotHome.html",
+
+  "browser_action": {
+    "default_icon": "icon.png",//the icon
+    "default_popup": "popup.html"//what will pop up when clicked on.
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js; object-src 'self'",
+  //"content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js 'self'",
+  "background" : {
+    "scripts" : ["background.js", "jQuery.js"]//always runs in background
+  },
+  "icons" : {
+    "128" : "icon.png"
+  },
+  "content_scripts": [{
+    "matches": ["*://www.supremenewyork.com/checkout"],
+    "js": ["jquery.js", "autofill.js"],
+    "run_at": "document_end"
+  },
+  {
+    "matches": ["*://www.supremenewyork.com/shop/*"],
+    "js": ["jquery.js", "addToCart.js"],
+    "run_at": "document_end"
+  }],
+  "web_accessible_resources": [
+    //"toolbar.html", //toolbar used in tutorial. Doesn't do anything
+    "style.css"
+  ],
+  "permissions" : [
+      "notifications",
+      "storage",
+      "http://localhost/WAMP/",
+      "http://fall16.lakeside-cs.org/SupremeBot/supremeMain.php",
+      "tabs",
+      "http://*/*",
+      "https://*/*",
+      "background",
+      "activeTab",
+      "https://ajax.googleapis.com/",
+      "contextMenus"
+  ]/*,
+  "chrome_url_overrides": {
+      "history" : "supremeMain.php"
+  }*/
+}

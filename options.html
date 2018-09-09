@@ -1,0 +1,120 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>SupremeBot Options</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+  </head>
+  <body>
+<form method="post" id = "submitForm">
+    <div>
+      <label for="">First Name</label>
+      <input id = "firstName" type="text">
+    </div>
+    <div>
+      <label for="">Last Name</label>
+      <input id = "lastName" type="text">
+    </div>
+    <div>
+      <label for="">Email</label>
+      <input id = "email" type="email">
+    </div>
+    <div>
+      <label for="">Phone</label>
+      <input id = "phone" type="text">
+    </div>
+    <div>
+      <label for="">Address</label>
+      <input id = "address" type="text">
+    </div>
+    <div>
+      <label for="">Zip Code</label>
+      <input id = "zipCode" type="text">
+    </div>
+    <div>
+      <label for="">City</label>
+      <input id = "city" type="text">
+    </div>
+    <div>
+      <label for="">State</label>
+      <input id = "state" type="text">
+    </div>
+    <div>
+      <label for="">Country</label>
+      <input id = "country" type="text">
+    </div>
+    <div>
+      <label for="">Size</label>
+      <input id = "size" type="text">
+    </div>
+    <div>
+      <label for="">Category</label>
+      <select name="category" id="category">
+        <option value="jackets">Jackets</option>
+        <option value="shirts">Shirts</option>
+        <option value="tops">Tops/Sweaters</option>
+        <option value="pants">Pants</option>
+        <option value="tshirts">T-Shirts</option>
+        <option value="hats">Hats</option>
+        <option value="bags">Bags</option>
+        <option value="accessories">Accessories</option>
+        <option value="skate">Skate</option>
+        <option value="shoes">Shoes</option>
+        <option value="shorts">Shorts</option>
+      </select>
+    </div>
+    <div>
+      <label for="">Keyword</label>
+      <input id = "keywords" type="text">
+    </div>
+    <div>
+      <label for="">Color</label>
+      <input id = "color" type="text">
+    </div>
+    <div>
+      <label for="">Provider</label>
+      <input id = "provider" type="text">
+    </div>
+    <div>
+      <label for="">Card Number</label>
+      <input id = "cardNumber" type="number">
+    </div>
+    <div>
+      <label for="">Expiration Date</label>
+      <input id = "expirationDate" type="text">
+    </div>
+    <div>
+      <label for="">CSV</label>
+      <input id = "csv" type="number">
+    </div>
+    <input id="submit" type="submit" value="Save" />
+    <span id="status-display"></span>
+  </form>
+    <div id="status"></div>
+    <img id="image-result" hidden>
+  </body>
+</html>
+
